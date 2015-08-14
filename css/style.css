@@ -1,0 +1,43 @@
+@charset "utf-8";
+/* CSS Document */
+
+* {margin: 0;padding: 0;list-style: none; text-decoration: none}
+input,select,textarea { font-size:inherit;-webkit-appearance: none; border-radius:0}
+body { font-size:100%; font-family:arial, sans-serif }
+img { max-width:100%; height:auto; vertical-align:middle}
+.page { max-width:450px; margin:auto; padding:10px; box-sizing:border-box;  }
+.blk { position:relative;padding:25px 10px 0; margin-bottom:20px; -webkit-box-shadow:2px 2px 5px #ccc; border-radius:4px; border:1px solid #eee;}
+.blk .blk-close { position:absolute; right:10px; top:10px; font-size:125%; color:#f60; cursor:pointer}
+.blk .caption { position:relative; display:table; content:''; width:100%; margin-bottom:20px}
+.blk .pic { float:left; width:40.625%; height:100%; margin-right:15px;}
+.blk .list { display:table; table-layout:fixed; width:100%; padding:5px 0 10px; line-height:2; border-bottom:1px solid #eee; margin-top:10px}
+.blk .list .food, .blk .list .fn { display:table-cell;}
+.blk .list .food { width:20%}
+.blk .list .fn { text-align:right}
+.blk .list:last-child { border:0}
+.blk .price { font-size:137.5%; color:#f60}
+.blk .main { overflow:hidden}
+.blk .main div { margin-top:15px}
+.blk .main div .price { float:left}
+.blk .main div p { float:right}
+.blk .item-price { display: none;}
+.blk input, .blk .btn { display:inline-block; vertical-align:top}
+.blk [type=text] { width:35px; text-align:center; line-height:28px; border:1px solid #999}
+.blk .btn {text-align:center; line-height:30px; width:30px; height:30px; background:#999; color:#fff}
+
+.statis { font-size:150%;color:#f60}
+.statis .total{ font-weight:bold}
+
+.send-btn { display: inline-block; float: right; padding: 0 20px; line-height: 30px; font-size: 58.33333333333334%; background: #f60; color: #fff}
+.result .blk { padding: 0}
+.result .blk .caption { line-height: 35px; padding: 0 10px; width: auto; display:block; background: #ddd}
+.result .blk img, .result .blk-close, .result .blk .btn, .result .blk .price,
+.result .blk[data-status=empty],
+.result .blk .list[data-num='0'] { display: none;}
+.result .blk h4 { float: left;}
+.result .blk .main div { margin: 0}
+.result .blk .list { overflow: hidden; padding: 0 10px; display: block; width: auto;}
+.result .blk .list .food,
+.result .blk .list .fn { float: left;}
+.result .blk [type=text] { border: 0; background: transparent; vertical-align: middle;}
+.result .blk .item-price { display: block; padding-left: 10px; line-height: 50px}
