@@ -1,5 +1,6 @@
 // JavaScript Document
-;(function() {
+;
+(function() {
   function $(id) {
     return document.getElementById(id);
   }
@@ -83,7 +84,6 @@
         parent(sibling, li[sibling.getAttribute('data-index')]).setAttribute('data-num', sibling.getAttribute('value'))
       }
     }
-    
     if(target.hasAttribute('data-close')) {
       id = $(target.getAttribute('data-id'));
       var price = +id.querySelector('[data-price]').innerHTML
@@ -106,7 +106,7 @@
 
   function submiter(e) {
     e.preventDefault()
-    if(!localStorage.getItem('@storage')) {
+    if(!changed) {
       localStorage.setItem('@storage', JSON.stringify({
         html: r.innerHTML,
         total: +totalPrice.innerHTML
@@ -114,7 +114,7 @@
     }
     if(+totalPrice.innerHTML && r.children.length) {
       location.href = this.getAttribute('href')
-      localStorage.setItem('@lock', '1')
+      localStorage.setItem('@lock', 1)
     }
     else {
       if(localStorage.getItem('@lock')) {
@@ -124,8 +124,7 @@
       return false;
     }
   }
-    setup()
-
-  send.onclick = submiter
+  setup();
+  send.onclick = submiter;
   r.onclick = r.ontouchend = r.oninput = changeOrders;
 })()

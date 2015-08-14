@@ -12,35 +12,33 @@
     <div class="statis">time：<span id="time"></span>&nbsp;&nbsp;&nbsp;total price：&#8364;<span id="total" class="total"></span></div>
   </div>
   <script>
-    ;(function() {
-      function $(id) {
-        return document.getElementById(id);
-      }
+  ;
+  (function() {
+    function $(id) {
+      return document.getElementById(id);
+    }
 
-      function pad(str) {
-        str = typeof str !== 'string' ? str.toString() : str
-        return str.length < 2 ? '0' + str : str
-      }
-      var r = $('r'),
-        totalPrice = $('total'),
-        time = $('time'),
-        now = new Date,
-        year = now.getFullYear(),
-        month = now.getMonth() + 1,
-        day = now.getDate()
-      if('@storage' in localStorage && localStorage.getItem('@lock')) {
-        r.innerHTML = JSON.parse(localStorage.getItem('@storage')).html
-        totalPrice.innerHTML = JSON.parse(localStorage.getItem('@storage')).total
-        time.innerHTML = year + '-' + pad(month) + '-' + pad(day)
-        var input = r.querySelectorAll('[type=text]');
-        // [].forEach.call(input, function(el) {
-        //   el.setAttribute('disabled', 'disabled')
-        // })
-      }
-      else {
-        document.querySelector('.page').style.display = 'none'
-      }
-        })()
+    function pad(str) {
+      str = typeof str !== 'string' ? str.toString() : str
+      return str.length < 2 ? '0' + str : str
+    }
+    var r = $('r'),
+      totalPrice = $('total'),
+      time = $('time'),
+      now = new Date,
+      year = now.getFullYear(),
+      month = now.getMonth() + 1,
+      day = now.getDate()
+    if('@storage' in localStorage && localStorage.getItem('@lock')) {
+      r.innerHTML = JSON.parse(localStorage.getItem('@storage')).html
+      totalPrice.innerHTML = JSON.parse(localStorage.getItem('@storage')).total
+      time.innerHTML = year + '-' + pad(month) + '-' + pad(day)
+      var input = r.querySelectorAll('[type=text]');
+    }
+    else {
+      document.querySelector('.page').style.display = 'none'
+    }
+  })()
   </script>
 </body>
 
