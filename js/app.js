@@ -1,6 +1,6 @@
 // JavaScript Document
-;
-(function() {
+
+;(function() {
   function $(id) {
     return document.getElementById(id);
   }
@@ -14,14 +14,14 @@
   var totalPrice = $('total'),
     changed = false;
 
-  function parent(elem, parent) {
-    parent = parent || document;
-    for(elem = elem.parentNode; elem; elem = elem.parentNode) {
-      if(elem && elem === parent) {
-        return elem
+  function parent(el, parent) {
+    while(el && el !== document) {
+      if(el === parent) {
+        return el
       }
+      el = el.parentNode
     }
-    return elem
+    return el
   }
 
   function setup() {
