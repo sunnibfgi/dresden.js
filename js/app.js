@@ -45,7 +45,7 @@
   }
 
   function setValue(el, a, b, dir) {
-    return el['innerHTML'] = dir ? a + b : a - b
+    return el.innerHTML = dir ? a + b : a - b
   }
 
   function changeOrders(e) {
