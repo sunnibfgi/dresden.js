@@ -62,7 +62,6 @@
       dir = target.previousElementSibling ? 'left' : 'right';
       var unit = +sibling.getAttribute('data-unit-price');
       id = $(sibling.getAttribute('data-id'));
-      sibling.blur()
       if(!/^\d+?$/.test(sibling.value)) {
         return false;
       }
