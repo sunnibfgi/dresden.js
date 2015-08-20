@@ -38,7 +38,6 @@
   global.tmpl = function() {
     var cache = {}
     return function(str, data) {
-	  var fn = cache[str]
       var fn = cache[str] || new Function("obj", "var p=[];" + "for(var i in obj){" + "if(obj.hasOwnProperty(i)){p.push('" + str.replace(/[\r\t\n]/g, "").split("<%").join("\t").replace(/((^|%>)[^\t]*)'/g, "$1\r").replace(/\t=(.*?)%>/g, "',$1,'").split("\t").join("');").split("%>").join("p.push('").split("\r").join("\\'") + "');}return p.join('');}")
       cache[str] = fn
       return fn(data)
